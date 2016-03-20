@@ -1,0 +1,13 @@
+g<section id="main" ng-show="vm.items.length">
+  <input id="toggle-all" type="checkbox"  ng-model="vm.allChecked" ng-click="vm.markAll(vm.allChecked)">
+  <label for="toggle-all">Mark all as complete</label>
+  <ul id="todo-list">
+    <li ng-repeat="item in vm.items | filter:vm.statusFilter track by $index" ng-class="{completed: item.completed}">
+      <div class="view">
+        <input class="toggle" type="checkbox" ng-model="item.completed" ng-change="vm.toggleCompleted()">
+        <label>{{item.name}}</label>
+        <button class="destroy" ng-click="vm.deleteItem(item)"></button>
+      </div>
+    </li>
+  </ul>
+</section>
