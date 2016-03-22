@@ -9,7 +9,6 @@
   function MainController($scope, $filter, toDoModel) {
     var vm = this;
 
-    debugger;
     vm.items = [];
 
     toDoModel.getAllItems()
@@ -20,8 +19,6 @@
       });
       
 //toDoModel.sendData({name:'test3',completed:true});
-      
-    
 
     vm.statusFilter = {};
     vm.newTodo = null;
@@ -79,7 +76,6 @@
     };
 
     vm.markAll = function (completed) {
-      debugger;
       completed = !completed;
       vm.items.forEach(function (item) {
         if (item.completed !== completed) {
